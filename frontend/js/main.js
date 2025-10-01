@@ -83,6 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
         '.about-content-section .about-image-content',
         '.about-features-section .about-feature-card',
         '.services-section .service-card',
+        '.contact-hero-section',
+        '.contact-section .contact-form-container',
+        '.contact-section .contact-info-container',
+        '.map-section',
         '.footer'
     ];
 
@@ -98,6 +102,10 @@ document.addEventListener('DOMContentLoaded', function() {
         ['reveal-base', 'reveal-left'],
         ['reveal-base', 'reveal-right'],
         ['reveal-base', 'reveal-up'],
+        ['reveal-base', 'reveal-up'],
+        ['reveal-base', 'reveal-up'],
+        ['reveal-base', 'reveal-left'],
+        ['reveal-base', 'reveal-right'],
         ['reveal-base', 'reveal-up'],
         ['reveal-base', 'reveal-up']
     ];
@@ -136,4 +144,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     elements.forEach(({ el }) => observer.observe(el));
+});
+
+// Contact form handling
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Show success message (in a real implementation, this would send to a server)
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    }
 });
