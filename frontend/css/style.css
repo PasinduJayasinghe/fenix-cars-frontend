@@ -3,13 +3,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
 }
 
 :root {
     --primary-color: #c43c24;
     --white-color: #ffffff;
     --black-color: #000000;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
+h1, h2, h3, h4, h5, h6, .nav-links, .book-now-btn {
+    font-family: var(--heading-font);
 }
 
 /* Navbar styles */
@@ -135,6 +144,8 @@
     margin-bottom: 2rem;
     color: var(--black-color);
     line-height: 1.1;
+    font-family: var(--heading-font);
+    letter-spacing: -0.02em;
 }
 
 .hero-content p {
@@ -440,6 +451,8 @@
     color: #333;
     margin-bottom: 1rem;
     font-weight: 600;
+    font-family: var(--heading-font);
+    letter-spacing: -0.01em;
 }
 
 .feature-card p {
