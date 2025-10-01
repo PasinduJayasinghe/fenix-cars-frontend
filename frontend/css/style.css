@@ -83,6 +83,8 @@
     align-items: flex-start;
     position: relative;
     overflow: hidden;
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .hero-video-background {
@@ -111,15 +113,20 @@
 }
 
 .hero-container {
+    width: 100%;
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0 2rem;
     position: relative;
     z-index: 3;
+    margin: 0;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 600px;
+    text-align: left;
+    padding-top: 2rem;
+    padding-left: 4rem;
+    margin: 0;
 }
 
 .hero-content h1 {
