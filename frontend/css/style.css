@@ -140,9 +140,31 @@
 .hero-content p {
     font-size: 1.25rem;
     line-height: 1.8;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     color: #444;
     max-width: 600px;
+}
+
+.hero-features {
+    margin-bottom: 2.5rem;
+}
+
+.hero-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hero-features li {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-features i {
+    color: var(--primary-color);
 }
 
 .hero-buttons {
