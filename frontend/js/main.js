@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
         '.special-discounts-section .discount-content',
         '.special-discounts-section .discount-image',
         '.testimonials-section',
+        '.page-header',
+        '.services-section .service-card',
         '.footer'
     ];
 
@@ -64,12 +66,28 @@ document.addEventListener('DOMContentLoaded', function() {
         ['reveal-base', 'reveal-up'],
         ['reveal-base', 'reveal-right'],
         ['reveal-base', 'reveal-zoom'],
+        ['reveal-base', 'reveal-up'],
+        ['reveal-base', 'reveal-up'],
         ['reveal-base', 'reveal-up']
     ];
 
-    const elements = sectionSelectors
-        .map((sel, idx) => ({ el: document.querySelector(sel), classes: revealClasses[idx] }))
-        .filter(item => item.el);
+    const elements = [];
+    
+    sectionSelectors.forEach((sel, idx) => {
+        if (sel === '.services-section .service-card') {
+            // Handle multiple service cards
+            const cards = document.querySelectorAll(sel);
+            cards.forEach(card => {
+                elements.push({ el: card, classes: revealClasses[idx] });
+            });
+        } else {
+            // Handle single elements
+            const el = document.querySelector(sel);
+            if (el) {
+                elements.push({ el, classes: revealClasses[idx] });
+            }
+        }
+    });
 
     elements.forEach(({ el, classes }) => {
         el.classList.add(...classes);
