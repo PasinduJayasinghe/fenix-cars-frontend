@@ -87,6 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
         '.contact-section .contact-form-container',
         '.contact-section .contact-info-container',
         '.map-section',
+        '.driver-hero-section',
+        '.driver-section .driver-info-container',
+        '.driver-section .driver-form-container',
         '.footer'
     ];
 
@@ -107,6 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
         ['reveal-base', 'reveal-left'],
         ['reveal-base', 'reveal-right'],
         ['reveal-base', 'reveal-up'],
+        ['reveal-base', 'reveal-up'],
+        ['reveal-base', 'reveal-left'],
+        ['reveal-base', 'reveal-right'],
         ['reveal-base', 'reveal-up']
     ];
 
@@ -179,6 +185,61 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Reset form
             contactForm.reset();
+        });
+    }
+});
+
+// Driver form handling
+document.addEventListener('DOMContentLoaded', function() {
+    const driverForm = document.getElementById('driverForm');
+    
+    if (driverForm) {
+        driverForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(driverForm);
+            const name = formData.get('name');
+            const mobile = formData.get('mobile');
+            const email = formData.get('email');
+            const address = formData.get('address');
+            const nationality = formData.get('nationality');
+            const experience = formData.get('experience');
+            const licenseNumber = formData.get('licenseNumber');
+            const licenseType = formData.get('licenseType');
+            
+            // Basic validation
+            if (!name || !mobile || !email || !address || !nationality || !experience || !licenseNumber || !licenseType) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Mobile number validation (basic UK format)
+            const mobileRegex = /^(\+44|0)[0-9]{10}$/;
+            if (!mobileRegex.test(mobile.replace(/\s/g, ''))) {
+                alert('Please enter a valid UK mobile number.');
+                return;
+            }
+            
+            // Experience validation
+            const expYears = parseInt(experience);
+            if (isNaN(expYears) || expYears < 0) {
+                alert('Please enter a valid number of years of experience.');
+                return;
+            }
+            
+            // Show success message (in a real implementation, this would send to a server)
+            alert('Thank you for your driver application! We will review your details and get back to you within 2-3 business days.');
+            
+            // Reset form
+            driverForm.reset();
         });
     }
 });

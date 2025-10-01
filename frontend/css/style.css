@@ -2026,6 +2026,367 @@ h1, h2, h3, h4, h5, h6, .nav-links, .book-now-btn {
     }
 }
 
+/* Become A Driver Page Styles */
+.driver-hero-section {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.driver-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.driver-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.driver-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(196, 60, 36, 0.3) 100%
+    );
+    z-index: 2;
+}
+
+.driver-hero-section .container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+.driver-hero-section .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.driver-hero-section .breadcrumb a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.driver-hero-section .breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.driver-hero-section .breadcrumb span {
+    margin: 0 0.5rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.driver-hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: white;
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Driver Section */
+.driver-section {
+    padding: 6rem 2rem;
+    background-color: #ffffff;
+}
+
+.driver-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* Driver Information */
+.driver-info-container {
+    padding: 2rem 0;
+}
+
+.driver-illustration {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.driver-icon {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, 
+        var(--primary-color) 0%,
+        #a33219 100%
+    );
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    box-shadow: 0 10px 30px rgba(196, 60, 36, 0.3);
+    margin-bottom: 2rem;
+}
+
+.driver-info-container h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: var(--heading-font);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.driver-divider {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.driver-divider span {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.driver-info-container p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.driver-info-container p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Driver Registration Form */
+.driver-form-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(196, 60, 36, 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 8px 25px rgba(196, 60, 36, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.driver-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(196, 60, 36, 0.05) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.driver-form-container:hover::before {
+    opacity: 1;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.form-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--black-color);
+    margin-bottom: 0.5rem;
+    font-family: var(--heading-font);
+    letter-spacing: -0.02em;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.driver-form {
+    position: relative;
+    z-index: 2;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid rgba(196, 60, 36, 0.2);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: var(--body-font);
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(196, 60, 36, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.form-group select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23c43c24' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: var(--body-font);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, 
+        #28a745 0%,
+        #20c997 100%
+    );
+    color: white;
+    border: none;
+    padding: 1.25rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+    background: linear-gradient(135deg, 
+        #20c997 0%,
+        #28a745 100%
+    );
+}
+
+.submit-btn i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Mobile responsive for driver page */
+@media (max-width: 992px) {
+    .driver-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .driver-info-container {
+        order: -1;
+        text-align: center;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .driver-hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .driver-info-container h2 {
+        font-size: 2rem;
+    }
+    
+    .driver-form-container {
+        padding: 2rem;
+    }
+    
+    .driver-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+}
+
 /* Scroll reveal animations */
 @media (prefers-reduced-motion: no-preference) {
     .reveal-base {
