@@ -1,4 +1,11 @@
-// Mobile menu toggle functionality
+// Clone testimonials for infinite scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.testimonials-track');
+    if (track) {
+        const clonedItems = [...track.children].map(item => item.cloneNode(true));
+        clonedItems.forEach(item => track.appendChild(item));
+    }
+})
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
