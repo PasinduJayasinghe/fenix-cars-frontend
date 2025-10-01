@@ -41,6 +41,29 @@ window.addEventListener('load', function() {
     setTimeout(removeLoader, 800);
 });
 
+// Hero video overlay transition
+document.addEventListener('DOMContentLoaded', function() {
+    const heroVideo = document.querySelector('.hero-video-background');
+    const heroVideoElement = document.querySelector('.hero-video-background video');
+    
+    if (heroVideo && heroVideoElement) {
+        // Start video after a delay to show background image first
+        setTimeout(() => {
+            heroVideo.classList.add('playing');
+        }, 2000); // 2 second delay to show background image
+        
+        // Handle video loading
+        heroVideoElement.addEventListener('loadeddata', () => {
+            console.log('Hero video loaded and ready to play');
+        });
+        
+        // Handle video errors
+        heroVideoElement.addEventListener('error', () => {
+            console.log('Hero video failed to load, showing background image only');
+        });
+    }
+});
+
 // Scroll-based section reveals with varied animations per section
 document.addEventListener('DOMContentLoaded', function() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -55,6 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
         '.special-discounts-section .discount-image',
         '.testimonials-section',
         '.page-header',
+        '.about-hero-section',
+        '.about-content-section .about-text-content',
+        '.about-content-section .about-image-content',
+        '.about-features-section .about-feature-card',
         '.services-section .service-card',
         '.footer'
     ];
@@ -68,14 +95,18 @@ document.addEventListener('DOMContentLoaded', function() {
         ['reveal-base', 'reveal-zoom'],
         ['reveal-base', 'reveal-up'],
         ['reveal-base', 'reveal-up'],
+        ['reveal-base', 'reveal-left'],
+        ['reveal-base', 'reveal-right'],
+        ['reveal-base', 'reveal-up'],
+        ['reveal-base', 'reveal-up'],
         ['reveal-base', 'reveal-up']
     ];
 
     const elements = [];
     
     sectionSelectors.forEach((sel, idx) => {
-        if (sel === '.services-section .service-card') {
-            // Handle multiple service cards
+        if (sel === '.services-section .service-card' || sel === '.about-features-section .about-feature-card') {
+            // Handle multiple cards
             const cards = document.querySelectorAll(sel);
             cards.forEach(card => {
                 elements.push({ el: card, classes: revealClasses[idx] });
