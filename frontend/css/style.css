@@ -1017,3 +1017,34 @@ h1, h2, h3, h4, h5, h6, .nav-links, .book-now-btn {
         width: 100%;
     }
 }
+
+/* Scroll reveal animations */
+@media (prefers-reduced-motion: no-preference) {
+    .reveal-base {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        will-change: opacity, transform;
+    }
+
+    .reveal-up {
+        transform: translateY(30px);
+    }
+
+    .reveal-left {
+        transform: translateX(-30px);
+    }
+
+    .reveal-right {
+        transform: translateX(30px);
+    }
+
+    .reveal-zoom {
+        transform: scale(0.96);
+    }
+
+    .reveal-in-view {
+        opacity: 1;
+        transform: none;
+    }
+}
