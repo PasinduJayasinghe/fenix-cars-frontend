@@ -307,6 +307,56 @@ h1, h2, h3, h4, h5, h6, .nav-links, .book-now-btn {
     background-color: #a33219;
 }
 
+/* Hero App Downloads */
+.hero-app-downloads {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    text-align: center;
+}
+
+.hero-app-downloads h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-family: var(--heading-font);
+}
+
+.app-download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.app-download-btn {
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.app-download-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.app-store-img,
+.play-store-img {
+    height: 60px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.app-download-btn:hover .app-store-img,
+.app-download-btn:hover .play-store-img {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 .hero-media {
     flex: 1;
     position: relative;
@@ -989,11 +1039,20 @@ h1, h2, h3, h4, h5, h6, .nav-links, .book-now-btn {
 
 .payment-methods {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
     margin: 3rem 0;
     padding: 2rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex: 1;
 }
 
 .payment-icon {
@@ -1004,6 +1063,51 @@ h1, h2, h3, h4, h5, h6, .nav-links, .book-now-btn {
 
 .payment-icon:hover {
     opacity: 1;
+}
+
+/* Footer App Downloads */
+.footer-app-downloads {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-app-downloads h4 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    font-family: var(--heading-font);
+    letter-spacing: -0.01em;
+}
+
+.footer-app-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer-app-btn {
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-app-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.footer-app-img {
+    height: 40px;
+    width: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.footer-app-btn:hover .footer-app-img {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .footer-bottom {
@@ -1098,6 +1202,34 @@ h1, h2, h3, h4, h5, h6, .nav-links, .book-now-btn {
     .hero-media {
         height: 400px;
         width: 100%;
+    }
+    
+    .hero-app-downloads {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+        text-align: center;
+    }
+    
+    .app-download-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .app-store-img,
+    .play-store-img {
+        height: 50px;
+    }
+    
+    .payment-methods {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .footer-app-buttons {
+        justify-content: center;
     }
 }
 
